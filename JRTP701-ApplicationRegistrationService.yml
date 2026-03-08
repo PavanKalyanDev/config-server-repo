@@ -1,0 +1,32 @@
+spring:
+application:
+name: JRTP701-ApplicationRegistrationService
+
+datasource:
+url: jdbc:mysql://localhost:3306/jrtp701_ish_db?useSSL=false&serverTimezone=UTC
+username: root
+password: Pspk#@123
+driver-class-name: com.mysql.cj.jdbc.Driver
+
+jpa:
+hibernate:
+ddl-auto: update
+show-sql: true
+
+app:
+ssa:
+url: http://localhost:9090/ssa-web-api/find/{ssn}
+allowed-state: california
+
+server:
+port: 7071
+
+eureka:
+client:
+register-with-eureka: true
+fetch-registry: true
+service-url:
+defaultZone: http://localhost:8761/eureka/
+
+instance:
+prefer-ip-address: true
