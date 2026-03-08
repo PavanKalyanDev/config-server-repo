@@ -13,6 +13,11 @@ spring:
       hibernate:
         format_sql: true
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+
 server:
   port: 8081
 
@@ -26,3 +31,9 @@ eureka:
   instance:
     hostname: localhost
     prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
