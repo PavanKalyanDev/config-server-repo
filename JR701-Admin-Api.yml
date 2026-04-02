@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: JR701-Admin-Api
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
   datasource:
     url: jdbc:mysql://localhost:3306/jrtp701_ish_db?useSSL=false&serverTimezone=UTC
     username: root
