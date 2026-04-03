@@ -1,3 +1,6 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: JR701-Admin-Api
@@ -24,9 +27,6 @@ spring:
       client:
         url: http://localhost:9090
 
-server:
-  port: 8081
-
 eureka:
   client:
     register-with-eureka: true
@@ -35,13 +35,18 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
   instance:
-    prefer-ip-address: true   # ✅ ONLY THIS
+    prefer-ip-address: true   # ✅ IMPORTANT
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
   endpoint:
     health:
       show-details: always
+
+logging:
+  level:
+    com.netflix.discovery: DEBUG
